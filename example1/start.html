@@ -39,7 +39,7 @@
                 <li id="li_17" >
                     <label class="description" for="element_17">Vehicle needed for -- no. of days  </label>
                     <div>
-                        <select class="element select medium" id="element_17" name="element_17"> 
+                        <select class="element select medium" id="noofdays" name="element_17">
                             <option value="one" selected="selected">1 day</option>
                             <option value="multiple" >2 days</option>
                             <option value="multiple" >3 days</option>
@@ -47,10 +47,11 @@
                         </select>
                     </div> 
                 </li>
-                <p><a class='iframe' href="one.html">Outside Webpage (Iframe)</a></p>
+                <p><a id="one" class='iframe' href="one.html"></a></p>
+                <p><a id="multiple" class='iframe' href="multiple.html"></a></p>
                 <li class="buttons">
                     <input type="hidden" name="form_id" value="650987" />
-                    <input id="saveForm" class="button_text" type="submit" name="submit" value="Show request form" />
+                    <input id="showForm" type="button" name="showForm" value="Show request form"/>
                 </li>
             </ul>
         </form>	
