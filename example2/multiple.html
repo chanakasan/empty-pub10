@@ -14,9 +14,7 @@
     <!--[if lt IE 9]>
     <script src="bootstrap/js/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="chosen/chosen.css" media="all">
-    <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/form.css" media="all">
+    <link href="css/form.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -31,9 +29,21 @@
 
     <!-- Form Name -->
     <legend>Request for vehicle reservation</legend>
-    <br/>
     <form class="form-horizontal">
         <fieldset>
+        <div class="row">
+        <div class="span1"></div>
+        <div class="span11">
+            <h4>To request a vehicle :</h4>
+            <h5>
+                <p></p>
+                <p>1. Please complete this form.</p>
+                <p>2. Company must approve the request.</p>
+                <p>3. Confirmation of the reservation will be notified to you by email.</p>
+            </h5>
+            </div>
+        </div><br/><br/>
+
             <div class="row">
                 <div class="span12">
                     <!-- Text input-->
@@ -41,7 +51,7 @@
                         <label class="control-label" for="f1">Requested For</label>
 
                         <div class="controls">
-                            <select data-placeholder="Name of vehicle requester"  class="chzn-select" tabindex="8">
+                            <select data-placeholder="Name of vehicle requester" style="width:350px;" class="chzn-select" tabindex="8">
                                 <option value="11" selected="selected">Mark Lewis</option>
                                 <option value="1">Kathleen Oliver </option>
                                 <option value="2">Margaret Butler </option>
@@ -66,23 +76,6 @@
                             </select>
                         </div>
                     </div>
-
-                    <!-- Multiple Checkboxes -->
-                    <div class="control-group">
-                        <label class="control-label" for="journey_type">Journey Type</label>
-
-                        <div class="controls">
-                            <label class="checkbox" for="journey_type-0">
-                                <input type="checkbox" name="journey_type" id="single" value="Single" checked="checked">
-                                Single
-                            </label>
-                            <label class="checkbox" for="journey_type-1">
-                                <input type="checkbox" name="journey_type" id="return" value="Return">
-                                Return
-                            </label>
-                        </div>
-                    </div>
-
                     <!-- Select Basic -->
                     <div class="control-group">
                         <label class="control-label" for="selectbasic">Type of Vehicle</label>
@@ -99,7 +92,6 @@
             </div>
             <!-- /row -->
             <!-- legend details -->
-            <br/>
             <div class="row">
                 <div class="span3"></div>
                 <div class="span9">
@@ -157,21 +149,8 @@
                 </div>
             </div>
             <!--/ row-->
-            <div class="row">
-                <div class="span5">
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="textinput">Duration</label>
-
-                        <div class="controls">
-                            <input id="textinput" name="textinput" type="text" placeholder="" class="input-mini"> hrs
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--/ row-->
             <!--/ Pickup Details -->
-<div id="return_details">
+
             <!-- legend details -->
             <div class="row">
                 <div class="span3"></div>
@@ -191,24 +170,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="span7">
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="textinput">Return Time</label>
 
-                        <div class="controls">
-                            <input id="textinput" name="textinput" type="text" placeholder=""
-                                   class="input-medium">
-                        </div>
+            </div>
+        <div class="row">
+            <div class="span7">
+                <!-- Text input-->
+                <div class="control-group">
+                    <label class="control-label" for="textinput">Anticipated Return Time</label>
+
+                    <div class="controls">
+                        <input id="textinput" name="textinput" type="text" placeholder=""
+                               class="input-medium">
                     </div>
                 </div>
             </div>
- </div><!--/return details -->
+        </div>
+        <!--/ row-->
             <!--/ row-->
-            <!--/ Return Details -->
+            <!--/ Pickup Details -->
 
             <!-- legend details -->
-            <br/>
             <div class="row">
                 <div class="span3"></div>
                 <div class="span9">
@@ -233,32 +214,12 @@
                         <label class="control-label" for="textinput">Others travelling with</label>
 
                         <div class="controls">
-                            <select data-placeholder="Names of other staff members" style="width:350px;" multiple class="chzn-select" tabindex="8">
-                                <option value="1">Kathleen Oliver </option>
-                                <option value="2">Margaret Butler </option>
-                                <option value="3">Todd Riley </option>
-                                <option value="4">Rachel Carter </option>
-                                <option value="5">Melissa Hayes </option>
-                                <option value="6">Arthur Mason </option>
-                                <option value="7">Ralph Mccoy </option>
-                                <option value="8">Craig Cook </option>
-                                <option value="9">Judy Evans </option>
-                                <option value="10">Larry Nelson </option>
-                                <option value="11">Michelle Burton </option>
-                                <option value="12">Lillian Butler </option>
-                                <option value="13">Mark Lewis </option>
-                                <option value="14">Ruby Mason </option>
-                                <option value="15">Heather Fuller </option>
-                                <option value="16">Jeremy Phillips </option>
-                                <option value="17">Terry Jordan </option>
-                                <option value="18">Janet Romero </option>
-                                <option value="19">Matthew Clark </option>
-                                <option value="20">Kathy Johnson </option>
-                            </select>
+                            <input id="textinput" name="textinput" type="text" placeholder=""
+                                   class="input-medium">
                         </div>
                     </div>
+
                     <!-- Button -->
-                    <br/>
                     <div class="control-group">
                         <label class="control-label" for="singlebutton"></label>
 
@@ -282,8 +243,6 @@
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<!-- javascript -->
-<script type="text/javascript" src="chosen/chosen.jquery.js"></script>
-<script type="text/javascript" src="js/form.js"></script>
+
 </body>
 </html>

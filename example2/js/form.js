@@ -16,7 +16,7 @@ $(document).ready(function(){
         var journey = $('#noofdays').val();
         var filename = journey+'.html';
         // jquery colorbox
-        $.colorbox({width:"60%", height:"80%", iframe:true, href:filename});
+        $.colorbox({width:"72%", height:"100%", iframe:true, href:filename});
     });
 
     function toggle_details(type, is_checked)
