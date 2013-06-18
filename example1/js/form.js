@@ -11,6 +11,8 @@ $(document).ready(function(){
         $(selector).chosen(config[selector]);
     }
 
+    //$('.iframe').colorbox({width:"70%", height:"100%", iframe:true});
+
 // start.html
     $('#showForm').click(function() {
         var journey = $('#noofdays').val();
@@ -18,8 +20,6 @@ $(document).ready(function(){
         // jquery colorbox
         $.colorbox({width:"60%", height:"100%", iframe:true, href:filename});
     });
-
-    //$('.iframe').colorbox({width:"70%", height:"100%", iframe:true});
 
     function toggle_details(type, is_checked)
     {
