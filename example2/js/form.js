@@ -54,4 +54,5 @@ $(document).ready(function(){
     $('#return_details').hide();
     // trigger checkBoxChecked()
     $("#single, #return").change(checkBoxChecked);
+
 });
