@@ -11,6 +11,8 @@
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="chosen/chosen.css" media="all">
     <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/jquery.timeentry.css" media="all">
+    <link rel="stylesheet" type="text/css" href="smoothness/jquery-ui-1.10.3.custom.min.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/form.css" media="all">
 </head>
 <body>
@@ -105,7 +107,7 @@
                         <label class="control-label" for="textinput">Pickup Date</label>
 
                         <div class="controls">
-                            <input id="textinput" name="textinput" type="text" placeholder="" class="input-medium">
+                            <input id="pickup_date" name="textinput" type="text" placeholder="" class="input-small">
                         </div>
                     </div>
                 </div>
@@ -116,7 +118,7 @@
 
                         <div class="controls">
                             <input id="textinput" name="textinput" type="text" placeholder=""
-                                   class="input-medium">
+                                   class="input-mini timeEntry">
                         </div>
                     </div>
                 </div>
@@ -163,7 +165,7 @@
                         <label class="control-label" for="textinput">Return Date</label>
 
                         <div class="controls">
-                            <input id="textinput" name="textinput" type="text" placeholder="" class="input-medium">
+                            <input id="return_date" name="textinput" type="text" placeholder="" class="input-small">
                         </div>
                     </div>
                 </div>
@@ -177,7 +179,7 @@
 
                     <div class="controls">
                         <input id="textinput" name="textinput" type="text" placeholder=""
-                               class="input-medium">
+                               class="input-mini timeEntry">
                     </div>
                 </div>
             </div>
@@ -262,7 +264,14 @@
 
 <!-- javascript -->
 <script type="text/javascript" src="chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.timeentry.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script type="text/javascript" src="js/form.js"></script>
-
+<script>
+    // jquery time entry
+    $('.timeEntry').timeEntry();
+    $('#pickup_date').datepicker();
+    $('#return_date').datepicker();
+</script>
 </body>
 </html>

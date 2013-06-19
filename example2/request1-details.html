@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Form</title>
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="chosen/chosen.css" media="all">
+    <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/jquery.timeentry.css" media="all">
+    <link rel="stylesheet" type="text/css" href="smoothness/jquery-ui-1.10.3.custom.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/form.css" media="all">
+</head>
+<body>
+<div class="container">
+    <!-- if javascript is turned off -->
+    <noscript>
+        <p>Javascript is disabled in your browser.</p>
+
+        <p>Please, turn on Javascript or use a different browser to use this app.</p>
+        <a href="#">Click here to continue</a>
+    </noscript>
+    <!-- /noscript -->
+    <div class="row">
+        <div class=""></div>
+        <div class="span12">
+            <div>
+                <object data="images/request1-details.svg" type="image/svg+xml"></object>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- javascript -->
+<script type="text/javascript" src="chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.timeentry.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
+<script>
+    // jquery time entry
+    $('.timeEntry').timeEntry();
+    $('#pickup_date').datepicker();
+    $('#return_date').datepicker();
+</script>
+</body>
+</html>
