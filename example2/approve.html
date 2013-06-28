@@ -54,22 +54,38 @@
         <fieldset>
             <div class="row">
                 <div class="span4">
+                    <!-- Select Basic -->
+                    <div class="control-group">
+                        <label class="control-label" for="selectbasic">Vehicle Type</label>
+                        <div class="controls">
+                            <select id="selectbasic" name="selectbasic" class="input-large">
+                                <option>4-passenger Sedan</option>
+                                <option>12-passenger Van</option>
+                                <option>7-passenger Mini-van</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
                     <!-- Text input-->
                     <div class="control-group">
                         <label class="control-label" for="f1">Assign Vehicle</label>
 
                         <div class="controls">
-                            <select data-placeholder="Name of vehicle requester"  class="chzn-select" tabindex="8">
-                                <option value="11" selected="selected">Toyota Caravan WD-8810</option>
-                                <option value="1">Toyota Jeep NZ-4567</option>
-                                <option value="2">Hyundai Mini-Van GH-9582</option>
+                            <select id="vehicle" data-placeholder="select vehicle to assign"  class="chzn-select" tabindex="8">
+                                <option value="wd-6050" selected="selected">Toyota Hiace WD-6050</option>
+                                <option value="nz-5678">Toyota Caravan NZ-5678</option>
+                                <option value="np-3040">Toyota Hiace NP-3040</option>
                             </select>
                         </div>
                     </div>
                 </div><!-- /span12 -->
                 <div class="span8">
                     <div id="vehicleDiv" class="controls">
-                        <img src="images/van1.jpg" class="img-polaroid">
+                        <img id="vehicleImg" src="" class="img-polaroid">
                     </div>
                 </div>
             </div><!-- /row -->
@@ -81,19 +97,17 @@
                         <label class="control-label" for="f1">Assign Driver</label>
                         <div class="controls">
                             <select id="driver" data-placeholder="Name of vehicle requester"  class="chzn-select" tabindex="8">
-                                <option value="11" selected="selected">Mark Lewis</option>
-                                <option value="3">Todd Riley </option>
-                                <option value="6">Arthur Mason </option>
-                                <option value="7">Ralph Mccoy </option>
-                                <option value="8">Craig Cook </option>
-                                <option value="10">Larry Nelson </option>
+                                <option value="1" selected="selected">Mark Lewis</option>
+                                <option value="2">Todd Riley </option>
+                                <option value="3">Arthur Mason </option>
+                                <option value="4">Ralph Mccoy </option>
                             </select>
                         </div>
                     </div>
                 </div><!-- /span12 -->
                 <div class="span8">
                     <div id="driverDiv" class="controls">
-                        <img src="images/driver1.jpg" class="img-polaroid">
+                        <img id="driverImg" src="" class="img-polaroid">
                     </div>
                 </div>
             </div><!-- /row -->
@@ -141,7 +155,7 @@
 <script type="text/javascript" src="chosen/chosen.jquery.js"></script>
 <script type="text/javascript" src="js/jquery.timeentry.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript" src="js/approve.js"></script>
 <script>
     // jquery time entry
     $('.timeEntry').timeEntry();
