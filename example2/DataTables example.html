@@ -124,7 +124,13 @@
     </script>
 </head>
 <body>
-<div class="container"> <br/>
+<noscript>
+    <p>Javascript is disabled in your browser.</p>
+
+    <p>Please, turn on Javascript or use a different browser to use this app.</p>
+    <a href="#">Click here to continue</a>
+</noscript>
+<div id="divMain" class="container" style="display:none"> <br/>
 <h2>Requests for Vehicle Reservations</h2><br/>
     <div id="example_wrapper" class="dataTables_wrapper" role="grid">
         <!--<div class="row">-->
@@ -173,8 +179,11 @@
                 <td class=" ">12-passenger Van</td>
                 <td class=" ">2013-06-14 3.00 PM</td>
                 <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a> |
-                    <a class="details" href="request1-print.html">Print details</a>
+                <td class="center ">
+                    <a class="iframe approve" href="approve.html">Approve</a> |
+                    <a class="iframe decline" href="decline.html">Disapprove</a> |
+                    <a class="iframe details" href="request1-details.html">View</a> |
+                    <a class="details" href="request1-print.html">Print</a>
                 </td>
             </tr>
             <tr class="gradeA odd">
@@ -182,8 +191,11 @@
                 <td class=" ">4-passenger Sedan</td>
                 <td class=" ">2013-06-15 3.00 PM</td>
                 <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a> |
-                    <a class="details" href="request1-print.html">Print details</a>
+                <td class="center ">
+                    <a class="iframe approve" href="approve.html">Approve</a> |
+                    <a class="iframe decline" href="decline.html">Disapprove</a> |
+                    <a class="iframe details" href="request1-details.html">View</a> |
+                    <a class="details" href="request1-print.html">Print</a>
                 </td>
             </tr>
             <!--end table 1 rows -->
@@ -416,6 +428,7 @@
 <script type="text/javascript" src="chosen/chosen.jquery.js"></script>
 <script type="text/javascript" src="colorbox/jquery.colorbox-min.js"></script>
 <script>
+    document.getElementById("divMain").style.display = "block";
     $('.iframe').colorbox({width:"70%", height:"100%", iframe:true});
 </script>
 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Approve a vehicle</title>
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="chosen/chosen.css" media="all">
+    <link rel="stylesheet" type="text/css" href="colorbox/colorbox.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/jquery.timeentry.css" media="all">
+    <link rel="stylesheet" type="text/css" href="smoothness/jquery-ui-1.10.3.custom.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/form.css" media="all">
+</head>
+<body>
+<div class="container">
+    <!-- if javascript is turned off -->
+    <noscript>
+        <p>Javascript is disabled in your browser.</p>
+
+        <p>Please, turn on Javascript or use a different browser to use this app.</p>
+        <a href="#">Click here to continue</a>
+    </noscript>
+    <!-- /noscript -->
+
+    <!-- Form Name -->
+    <legend>Approve a vehicle - Request #13072711</legend>
+    <div class="row">
+        <div class="span1"></div>
+        <div class="span11">
+            <h4>Request Details:</h4>
+            <h5>
+                <p>Reference No. : <a href="#"> #13072711</a></p>
+                <p>Requested for : Mr. John Doe</p>
+                <p>Journey type : One Day Single</p>
+                <p>Vehicle type : 12-Passenger Van</p>
+                <p>Pickup Point : ICTA</p>
+                <p>Pickup Date/Time : 2013/07/30, 2.30 p.m.</p>
+                <p>Destination : Colombo 10</p>
+                <p>Purpose for travel : Conference</p>
+                <p>Others travelling with : - </p>
+            </h5>
+        </div>
+    </div><br/><br/>
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="row">
+                <div class="span4">
+                    <!-- Text input-->
+                    <div class="control-group">
+                        <label class="control-label" for="f1">Assign Vehicle</label>
+
+                        <div class="controls">
+                            <select data-placeholder="Name of vehicle requester"  class="chzn-select" tabindex="8">
+                                <option value="11" selected="selected">Toyota Caravan WD-8810</option>
+                                <option value="1">Toyota Jeep NZ-4567</option>
+                                <option value="2">Hyundai Mini-Van GH-9582</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><!-- /span12 -->
+                <div class="span8">
+                    <div id="vehicleDiv" class="controls">
+                        <img src="images/van1.jpg" class="img-polaroid">
+                    </div>
+                </div>
+            </div><!-- /row -->
+            <br/>
+            <div class="row">
+                <div class="span4">
+                    <!-- Text input-->
+                    <div class="control-group">
+                        <label class="control-label" for="f1">Assign Driver</label>
+                        <div class="controls">
+                            <select id="driver" data-placeholder="Name of vehicle requester"  class="chzn-select" tabindex="8">
+                                <option value="11" selected="selected">Mark Lewis</option>
+                                <option value="3">Todd Riley </option>
+                                <option value="6">Arthur Mason </option>
+                                <option value="7">Ralph Mccoy </option>
+                                <option value="8">Craig Cook </option>
+                                <option value="10">Larry Nelson </option>
+                            </select>
+                        </div>
+                    </div>
+                </div><!-- /span12 -->
+                <div class="span8">
+                    <div id="driverDiv" class="controls">
+                        <img src="images/driver1.jpg" class="img-polaroid">
+                    </div>
+                </div>
+            </div><!-- /row -->
+
+            <!-- legend details -->
+            <div class="row">
+                <div class="span3"></div>
+                <div class="span9">
+                    <legend id="desc">  </legend>
+                </div>
+            </div>
+            <!-- Last section -->
+            <div class="row">
+                <div class="span12">
+                    <!-- Textarea -->
+                    <div class="control-group">
+                        <label class="control-label" for="textarea">Notification Message</label>
+                        <div class="controls">
+                            <img src="images/Approved-request.png" class="img-polaroid">
+                        </div>
+                    </div>
+                </div>     <!--/span12 -->
+                    <!-- Button -->
+                    <br/>
+                    <div class="control-group">
+                        <label class="control-label" for="singlebutton"></label>
+
+                        <div class="controls">
+                            <button id="singlebutton" name="singlebutton" class="btn btn-success">Send Approval</button>
+                        </div>
+                    </div>
+            </div><!--/ row-->
+        </fieldset>
+    </form>
+</div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- javascript -->
+<script type="text/javascript" src="chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.timeentry.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
+<script>
+    // jquery time entry
+    $('.timeEntry').timeEntry();
+    $('#pickup_date').datepicker();
+    $('#return_date').datepicker();
+</script>
+</body>
+</html>
