@@ -1,9 +1,9 @@
 {% extends 'admin.html.twig' %}
 
+{% block title %}Request list - {{ parent() }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/assets/DataTables/bootstrap.css">
+    {#<link rel="stylesheet" type="text/css" href="/assets/DataTables/bootstrap.css">#}
     <link rel="stylesheet" type="text/css" href="/assets/DataTables/DT_bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/assets/colorbox/colorbox.css" media="all">
     <link rel="stylesheet" type="text/css" href="/public/css/form.css" media="all">
@@ -16,26 +16,11 @@
     <p>Please, turn on Javascript or use a different browser to use this app.</p>
     <a href="#">Click here to continue</a>
 </noscript>
+
 <div id="divMain" class="container" style="display:none"> <br/>
 <h2>Requests for Vehicle Reservations</h2><br/>
-    <div id="example_wrapper" class="dataTables_wrapper" role="grid">
-        <!--<div class="row">-->
-            <!--<div class="span8">-->
-                <!--<div class="dataTables_length" id="example_length"><label><select aria-controls="example" size="1"-->
-                                                                                  <!--name="example_length">-->
-                    <!--<option selected="selected" value="10">10</option>-->
-                    <!--<option value="25">25</option>-->
-                    <!--<option value="50">50</option>-->
-                    <!--<option value="100">100</option>-->
-                <!--</select> records per page</label></div>-->
-            <!--</div>-->
-            <!--<div class="span8">-->
-                <!--<div id="example_filter" class="dataTables_filter"><label>Search: <input aria-controls="example"-->
-                                                                                         <!--type="text"></label></div>-->
-            <!--</div>-->
-        <!--</div>-->
         <h4>Newly Added</h4><br/>
-        <table aria-describedby="example_info" class="bordered-table zebra-striped dataTable" id="example1"
+        <table class="table table-bordered table-hover dataTable"
                cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr role="row">
@@ -88,8 +73,8 @@
             </tbody>
         </table><br/>
 
-        <h4>Previously Added</h4>
-             <table aria-describedby="example_info" class="bordered-table zebra-striped dataTable" id="example"
+        <h4>Previously Added</h4><br/>
+             <table class="table table-bordered table-hover dataTable" id="example"
                cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr role="row">
@@ -114,7 +99,7 @@
 
             <tbody aria-releVant="all" aria-live="polite" role="alert">
             <!-- table rows -->
-            <tr class="gradeA odd">
+            <tr class="success gradeA odd">
                 <td class="  sorting_1">John doe</td>
                 <td class=" ">12-passenger Van</td>
                 <td class=" ">2013-06-14 3.00 PM</td>
@@ -306,18 +291,14 @@
             <!--end table rows -->
             </tbody>
         </table>
-        <!--<div class="row"><div class="span8"><div id="example_info" class="dataTables_info">Showing 1 to 10 of 57 entries</div></div><div class="span8"><div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li class="next"><a href="#">Next → </a></li></ul></div></div></div> -->
     </div>
 </div>
 {% endblock %}
 
 {% block javascripts %}
-{#{{ parent() }}#}
-{#<script type="text/javascript" src="/assets/jquery/jquery-1.9.1.min.js"></script>#}
-<script type="text/javascript" src="/assets/DataTables/jquery.js"></script>
-<script type="text/javascript" src="/assets/DataTables/DT_jquery.js"></script>
-    <script type="text/javascript" src="/assets/DataTables/DT_bootstrap.js"></script>
-
+{{ parent() }}
+<script type="text/javascript" src="/assets/DataTables/dataTables.js"></script>
+<script type="text/javascript" src="/assets/DataTables/DT_bootstrap.js"></script>
 <script type="text/javascript" charset="utf-8">
     /* Table initialisation */
     $(document).ready(function () {
