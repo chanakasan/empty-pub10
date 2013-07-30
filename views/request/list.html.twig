@@ -4,65 +4,58 @@
 {% block stylesheets %}
     {{ parent() }}
     {#<link rel="stylesheet" type="text/css" href="/assets/DataTables/bootstrap.css">#}
-    <link rel="stylesheet" type="text/css" href="/assets/DataTables/DT_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/DataTables/dataTables.css">
     <link rel="stylesheet" type="text/css" href="/assets/colorbox/colorbox.css" media="all">
     <link rel="stylesheet" type="text/css" href="/public/css/form.css" media="all">
 {% endblock %}
 
 {% block body %}
-<noscript>
-    <p>Javascript is disabled in your browser.</p>
+    <div class="row">
+        <div class="col-lg-10 col-offset-1">
+            <h2>Requests for Vehicle Reservations</h2>
+        </div>
+    </div><br/>
 
-    <p>Please, turn on Javascript or use a different browser to use this app.</p>
-    <a href="#">Click here to continue</a>
-</noscript>
-
-<div id="divMain" class="container" style="display:none"> <br/>
-<h2>Requests for Vehicle Reservations</h2><br/>
-        <h4>Newly Added</h4><br/>
-        <table class="table table-bordered table-hover dataTable"
-               cellpadding="0" cellspacing="0" border="0">
+        <table class="table table-bordered table-hover dataTable" id="list1">
             <thead>
             <tr role="row">
-                <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending"
-                    style="width: 162px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0"
-                    role="columnheader" class="header headerSortDown">Requester's Name
+                <th tabindex="0" role="columnheader" class="header headerSortDown">Req ID #
                 </th>
-                <th aria-label="Browser: activate to sort column ascending" style="width: 221px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Requested Vehicle
+                <th tabindex="0" role="columnheader" class="header headerSortDown">Requester's Name
                 </th>
-                <th aria-label="Platform(s): activate to sort column ascending" style="width: 207px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Requested Date/Time
+                <th tabindex="0" role="columnheader" class="header">Requested Vehicle
                 </th>
-                <th aria-label="Engine version: activate to sort column ascending" style="width: 141px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Purpose of travel
+                <th tabindex="0" role="columnheader" class="header">Requested Date/Time
                 </th>
-                <th aria-label="CSS grade: activate to sort column ascending" style="width: 104px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">
+                <th tabindex="0" role="columnheader" class="header">Purpose of travel
+                </th>
+                <th tabindex="0" role="columnheader" class="header">
                 </th>
             </tr>
             </thead>
 
-            <tbody aria-releVant="all" aria-live="polite" role="alert">
+            <tbody>
             <!-- table rows -->
-            <tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center ">
+            <tr>
+                <td>23</td>
+                <td>John doe</td>
+                <td>12-passenger Van</td>
+                <td>2013-06-14 3.00 PM</td>
+                <td>Meeting</td>
+                <td>
                     <a class="iframe approve" href="approve.html">Approve</a> |
                     <a class="iframe decline" href="decline.html">Disapprove</a> |
                     <a class="iframe details" href="request1-details.html">View</a> |
                     <a class="details" href="request1-print.html">Print</a>
                 </td>
             </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-15 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center ">
+            <tr>
+                <td>45</td>
+                <td>Bob doe</td>
+                <td>4-passenger Sedan</td>
+                <td>2013-06-15 3.00 PM</td>
+                <td>Conference</td>
+                <td>
                     <a class="iframe approve" href="approve.html">Approve</a> |
                     <a class="iframe decline" href="decline.html">Disapprove</a> |
                     <a class="iframe details" href="request1-details.html">View</a> |
@@ -72,250 +65,33 @@
             <!--end table 1 rows -->
             </tbody>
         </table><br/>
-
-        <h4>Previously Added</h4><br/>
-             <table class="table table-bordered table-hover dataTable" id="example"
-               cellpadding="0" cellspacing="0" border="0">
-            <thead>
-            <tr role="row">
-                <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending"
-                    style="width: 162px;" colspan="1" rowspan="1" aria-controls="example" tabindex="0"
-                    role="columnheader" class="header headerSortDown">Requester's Name
-                </th>
-                <th aria-label="Browser: activate to sort column ascending" style="width: 221px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Requested Vehicle
-                </th>
-                <th aria-label="Platform(s): activate to sort column ascending" style="width: 207px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Requested Date/Time
-                </th>
-                <th aria-label="Engine version: activate to sort column ascending" style="width: 141px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">Purpose of travel
-                </th>
-                <th aria-label="CSS grade: activate to sort column ascending" style="width: 104px;" colspan="1"
-                    rowspan="1" aria-controls="example" tabindex="0" role="columnheader" class="header">
-                </th>
-            </tr>
-            </thead>
-
-            <tbody aria-releVant="all" aria-live="polite" role="alert">
-            <!-- table rows -->
-            <tr class="success gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-15 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-16 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-20 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 10.00 AM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 1.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-14 2.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeX even">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-14 4.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-<tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-15 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-16 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-20 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 10.00 AM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 1.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-14 2.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeX even">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-14 4.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-<tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-15 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-16 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-20 3.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Martin doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 3.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">Ben doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 10.00 AM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA even">
-                <td class="  sorting_1">Bob doe</td>
-                <td class=" ">12-passenger Van</td>
-                <td class=" ">2013-06-14 1.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeA odd">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">7-passenger Mini-Van</td>
-                <td class=" ">2013-06-14 2.00 PM</td>
-                <td class="center ">Meeting</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <tr class="gradeX even">
-                <td class="  sorting_1">John doe</td>
-                <td class=" ">4-passenger Sedan</td>
-                <td class=" ">2013-06-14 4.00 PM</td>
-                <td class="center ">Conference</td>
-                <td class="center "><a class="iframe details" href="request1-details.html">View details</a></td>
-            </tr>
-            <!--end table rows -->
-            </tbody>
-        </table>
-    </div>
-</div>
 {% endblock %}
 
 {% block javascripts %}
-{{ parent() }}
-<script type="text/javascript" src="/assets/DataTables/dataTables.js"></script>
-<script type="text/javascript" src="/assets/DataTables/DT_bootstrap.js"></script>
-<script type="text/javascript" charset="utf-8">
-    /* Table initialisation */
-    $(document).ready(function () {
-        $('#example').dataTable({
-            "sDom": "<'row'<'span8'l><'span8'f>r>t<'row'<'span8'i><'span8'p>>",
-            "sPaginationType": "bootstrap",
-            "oLanguage": {
-                "sLengthMenu": "_MENU_ records per page"
-            }
-        });
-    });
-</script>
+    {{ parent() }}
+    <script type="text/javascript" src="/assets/DataTables/dataTables.js"></script>
+    <script type="text/javascript" src="/assets/DataTables/DT_bootstrap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        /* Table initialisation */
+        $(document).ready(function () {
+            $('#list1').dataTable({
+                "sDom": "<'row'<'col-lg-3 col-offset-1'i>>" +
+                        "<'row'<'col-lg-10 col-offset-1'f>>" +
+                        "<'row'<'col-lg-10 col-offset-1'l>>" +
+                        "<'row'<'col-lg-10 col-offset-1't>>" +
+                        "<'row'<'col-lg-10 col-offset-1'p>>",
 
-<script type="text/javascript" src="/assets/chosen/chosen.jquery.js"></script>
-<script type="text/javascript" src="/assets/colorbox/jquery.colorbox-min.js"></script>
-<script>
-    document.getElementById("divMain").style.display = "block";
-    $('.iframe').colorbox({width:"70%", height:"100%", iframe:true});
-</script>
+                "sPaginationType": "bootstrap",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ records per page"
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="/assets/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" src="/assets/colorbox/jquery.colorbox-min.js"></script>
+    <script>
+        $('.iframe').colorbox({width: "70%", height: "100%", iframe: true});
+    </script>
 {% endblock %}
