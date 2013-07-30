@@ -7,6 +7,14 @@
     <link rel="stylesheet" type="text/css" href="/assets/DataTables/dataTables.css">
     <link rel="stylesheet" type="text/css" href="/assets/colorbox/colorbox.css" media="all">
     <link rel="stylesheet" type="text/css" href="/public/css/form.css" media="all">
+    <style>
+        body {
+            background: #fff
+        }
+        #list1 {
+            background: rgba(0, 0, 0, 0.075);
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
@@ -16,10 +24,34 @@
         </div>
     </div><br/>
 
-        <table class="table table-bordered table-hover dataTable" id="list1">
+    <div class="row">
+        <div class="col-lg-10 col-offset-1">
+            <ul class="nav nav-pills">
+                <li id="nPending">
+                    <a href="#">Pending
+                        <span id="pending"  class="badge pull-right"></span>
+                    </a>
+                </li>
+                <li id="nApproved">
+                    <a href="#">Approved</a>
+                </li>
+                <li id="nDisapproved">
+                    <a href="#">Disapproved</a>
+                </li>
+                <li id="nExpired">
+                    <a href="#">Expired</a>
+                </li>
+                <li class="active">
+                    <a href="#">All</a>
+                </li>
+            </ul>
+        </div>
+    </div><br/><br/>
+
+    <table class="table table-bordered table-hover dataTable" id="list1">
             <thead>
             <tr role="row">
-                <th tabindex="0" role="columnheader" class="header headerSortDown">Req ID #
+                <th tabindex="0" role="columnheader" class="header headerSortDown">Req&nbsp;ID&nbsp;#
                 </th>
                 <th tabindex="0" role="columnheader" class="header headerSortDown">Requester's Name
                 </th>
@@ -37,9 +69,16 @@
             <tbody>
             <!-- table rows -->
             {% for i in 0..10 %}
+             {% set status = 'warning' %}
+            {% if i < 2 %}
+                {% set status = 'success' %}
+            {% endif %}
+            {% if i > 8 %}
+                {% set status = 'danger' %}
+            {% endif %}
 
-                <tr>
-                    <td>0{{ i+1 }}{{ i }}</td>
+                <tr class="{{ status }}">
+                    <td>0{{ i }}{{ i+1 }}</td>
                     <td>John doe</td>
                     <td>12-p Van</td>
                     <td>2013-06-{{ i+2 }} 3.00 PM</td>
@@ -51,8 +90,8 @@
                         <a class="details" href="request1-print.html">Print</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>0{{ i }}{{ i+1 }}</td>
+                <tr class="{{ status }}">
+                    <td>0{{ i+20 }}</td>
                     <td>Bob doe</td>
                     <td>4-p Sedan</td>
                     <td>2013-06-{{ i+5 }} 4.00 PM</td>
@@ -75,27 +114,7 @@
     {{ parent() }}
     <script type="text/javascript" src="/assets/DataTables/dataTables.js"></script>
     <script type="text/javascript" src="/assets/DataTables/DT_bootstrap.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        /* Table initialisation */
-        $(document).ready(function () {
-            $('#list1').dataTable({
-                "sDom": "<'row'<'col-lg-10 col-offset-1'i>>" +
-                        "<'row'<'col-lg-10 col-offset-1'f>>" +
-                        "<'row'<'col-lg-10 col-offset-1'l>>" +
-                        "<'row'<'col-lg-10 col-offset-1't>>" +
-                        "<'row'<'col-lg-10 col-offset-1'p>>",
-
-                "sPaginationType": "bootstrap",
-                "oLanguage": {
-                    "sLengthMenu": "_MENU_ items per page"
-                }
-            });
-        });
-    </script>
-
     <script type="text/javascript" src="/assets/chosen/chosen.jquery.js"></script>
     <script type="text/javascript" src="/assets/colorbox/jquery.colorbox-min.js"></script>
-    <script>
-        $('.iframe').colorbox({width: "70%", height: "100%", iframe: true});
-    </script>
+    <script type="text/javascript" src="/public/js/request/list.js"></script>
 {% endblock %}
