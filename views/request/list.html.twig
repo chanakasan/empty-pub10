@@ -36,32 +36,36 @@
 
             <tbody>
             <!-- table rows -->
-            <tr>
-                <td>23</td>
-                <td>John doe</td>
-                <td>12-passenger Van</td>
-                <td>2013-06-14 3.00 PM</td>
-                <td>Meeting</td>
-                <td>
-                    <a class="iframe approve" href="approve.html">Approve</a> |
-                    <a class="iframe decline" href="decline.html">Disapprove</a> |
-                    <a class="iframe details" href="request1-details.html">View</a> |
-                    <a class="details" href="request1-print.html">Print</a>
-                </td>
-            </tr>
-            <tr>
-                <td>45</td>
-                <td>Bob doe</td>
-                <td>4-passenger Sedan</td>
-                <td>2013-06-15 3.00 PM</td>
-                <td>Conference</td>
-                <td>
-                    <a class="iframe approve" href="approve.html">Approve</a> |
-                    <a class="iframe decline" href="decline.html">Disapprove</a> |
-                    <a class="iframe details" href="request1-details.html">View</a> |
-                    <a class="details" href="request1-print.html">Print</a>
-                </td>
-            </tr>
+            {% for i in 0..10 %}
+
+                <tr>
+                    <td>0{{ i+1 }}{{ i }}</td>
+                    <td>John doe</td>
+                    <td>12-p Van</td>
+                    <td>2013-06-{{ i+2 }} 3.00 PM</td>
+                    <td>Meeting</td>
+                    <td>
+                        <a class="iframe approve" href="approve.html">Approve</a> |
+                        <a class="iframe decline" href="decline.html">Disapprove</a> |
+                        <a class="iframe details" href="request1-details.html">View</a> |
+                        <a class="details" href="request1-print.html">Print</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0{{ i }}{{ i+1 }}</td>
+                    <td>Bob doe</td>
+                    <td>4-p Sedan</td>
+                    <td>2013-06-{{ i+5 }} 4.00 PM</td>
+                    <td>Conference</td>
+                    <td>
+                        <a class="iframe approve" href="approve.html">Approve</a> |
+                        <a class="iframe decline" href="decline.html">Disapprove</a> |
+                        <a class="iframe details" href="request1-details.html">View</a> |
+                        <a class="details" href="request1-print.html">Print</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
             <!--end table 1 rows -->
             </tbody>
         </table><br/>
@@ -75,7 +79,7 @@
         /* Table initialisation */
         $(document).ready(function () {
             $('#list1').dataTable({
-                "sDom": "<'row'<'col-lg-3 col-offset-1'i>>" +
+                "sDom": "<'row'<'col-lg-10 col-offset-1'i>>" +
                         "<'row'<'col-lg-10 col-offset-1'f>>" +
                         "<'row'<'col-lg-10 col-offset-1'l>>" +
                         "<'row'<'col-lg-10 col-offset-1't>>" +
@@ -83,7 +87,7 @@
 
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page"
+                    "sLengthMenu": "_MENU_ items per page"
                 }
             });
         });
