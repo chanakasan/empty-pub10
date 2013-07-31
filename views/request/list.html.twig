@@ -3,18 +3,9 @@
 {% block title %}Request list - {{ parent() }}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
-    {#<link rel="stylesheet" type="text/css" href="/assets/DataTables/bootstrap.css">#}
     <link rel="stylesheet" type="text/css" href="/assets/DataTables/dataTables.css">
     <link rel="stylesheet" type="text/css" href="/assets/colorbox/colorbox.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/public/css/form.css" media="all">
-    <style>
-        body {
-            background: #fff
-        }
-        #list1 {
-            background: rgba(0, 0, 0, 0.075);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/public/css/request/list.css" media="all">
 {% endblock %}
 
 {% block body %}
@@ -23,32 +14,34 @@
             <h2>Requests for Vehicle Reservations</h2>
         </div>
     </div><br/>
-
-    <div class="row">
-        <div class="col-lg-10 col-offset-1">
-            <ul class="nav nav-pills">
-                <li id="nPending">
-                    <a href="#">Pending
-                        <span id="pending"  class="badge pull-right"></span>
-                    </a>
-                </li>
-                <li id="nApproved">
-                    <a href="#">Approved</a>
-                </li>
-                <li id="nDisapproved">
-                    <a href="#">Disapproved</a>
-                </li>
-                <li id="nExpired">
-                    <a href="#">Expired</a>
-                </li>
-                <li class="active">
-                    <a href="#">All</a>
-                </li>
-            </ul>
+    <div class="content-nav">
+        <div class="row">
+            <div class="col-lg-10 col-offset-1">
+                <ul class="nav nav-pills">
+                    <li id="nPending">
+                        <a href="#">Pending
+                            <span id="pending" class="badge pull-right"></span>
+                        </a>
+                    </li>
+                    <li id="nApproved">
+                        <a href="#">Approved</a>
+                    </li>
+                    <li id="nDisapproved">
+                        <a href="#">Disapproved</a>
+                    </li>
+                    <li id="nExpired">
+                        <a href="#">Expired</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">All</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div><br/><br/>
-
-    <table class="table table-bordered table-hover dataTable" id="list1">
+    </div>
+    <br/><br/>
+    <div class="main-content">
+        <table class="table table-bordered table-hover dataTable" id="list1">
             <thead>
             <tr role="row">
                 <th tabindex="0" role="columnheader" class="header headerSortDown">Req&nbsp;ID&nbsp;#
@@ -69,13 +62,13 @@
             <tbody>
             <!-- table rows -->
             {% for i in 0..10 %}
-             {% set status = 'warning' %}
-            {% if i < 2 %}
-                {% set status = 'success' %}
-            {% endif %}
-            {% if i > 8 %}
-                {% set status = 'danger' %}
-            {% endif %}
+                {% set status = 'warning' %}
+                {% if i < 2 %}
+                    {% set status = 'success' %}
+                {% endif %}
+                {% if i > 8 %}
+                    {% set status = 'danger' %}
+                {% endif %}
 
                 <tr class="{{ status }}">
                     <td>0{{ i }}{{ i+1 }}</td>
@@ -84,8 +77,6 @@
                     <td>2013-06-{{ i+2 }} 3.00 PM</td>
                     <td>Meeting</td>
                     <td>
-                        <a class="iframe approve" href="approve.html">Approve</a> |
-                        <a class="iframe decline" href="decline.html">Disapprove</a> |
                         <a class="iframe details" href="request1-details.html">View</a> |
                         <a class="details" href="request1-print.html">Print</a>
                     </td>
@@ -97,8 +88,6 @@
                     <td>2013-06-{{ i+5 }} 4.00 PM</td>
                     <td>Conference</td>
                     <td>
-                        <a class="iframe approve" href="approve.html">Approve</a> |
-                        <a class="iframe decline" href="decline.html">Disapprove</a> |
                         <a class="iframe details" href="request1-details.html">View</a> |
                         <a class="details" href="request1-print.html">Print</a>
                     </td>
@@ -107,7 +96,8 @@
 
             <!--end table 1 rows -->
             </tbody>
-        </table><br/>
+        </table>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
@@ -118,3 +108,4 @@
     <script type="text/javascript" src="/assets/colorbox/jquery.colorbox-min.js"></script>
     <script type="text/javascript" src="/public/js/request/list.js"></script>
 {% endblock %}
+
